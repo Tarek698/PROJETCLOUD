@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=1">
     <title>{% block title %}Blog{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <header>
-        <h1>Mon Blog Personnel</h1>
-        <nav>
-            <a href="{{ url_for('index') }}">Accueil</a>
-        </nav>
+        <div class="container">
+            <h1><a href="{{ url_for('index') }}">Mon Blog Personnel</a></h1>
+        </div>
     </header>
+
     <main>
         {% block content %}{% endblock %}
     </main>
+
     <footer>
         <p>&copy; 2024 Mon Blog. Tous droits réservés.</p>
     </footer>
